@@ -1,0 +1,57 @@
+header {
+  color: white;
+  background-color: rgb(25, 30, 48);
+
+  padding: 12px;
+}
+
+header img {
+  /* Este important sa ii dam o latime imaginii, altfel e posibil ca flex sa o intinda pe intreg randul. */
+  width: 150px;
+}
+
+header nav {
+  display: flex;
+  /* Pentru a alinia elementele pe verticala, folosim align-items. Daca vrem sa le centram, dam valoarea center. */
+  align-items: center;
+}
+
+header nav div {
+  margin-left: 50px;
+}
+
+header .container {
+  display: flex;
+
+  /* In container sunt doi copii: img si nav. Vrem ca unul sa fie in stanga, iar celalalt in drepata. Pentru acest tip de aliniere pe orizontala, folosim justify-content: space-between. */
+  justify-content: space-between;
+}
+
+header .meniu {
+  /* Folosim display none pentru a ascunde div-ul cu clasa 'meniu' */
+  display: none;
+}
+
+/* CSS-ul din interiorul acoladelor acestui media query se va aplica doar daca dimensiunea maixma a ecranului este de 600px. */
+@media (max-width: 600px) {
+
+  /* Proprietatile de CSS din media queries se scriu dupa cele normale, intrucat uneori este nevoie sa le suprascrie. */
+  header .container {
+    /* flex-direction: column; */
+    align-items: center;
+  }
+
+  header nav {
+    /* Cand ecranul este mai ingust de 600px ascundem meniul si afisam butonul (textul) Meniu */
+    display: none;
+    /* flex-direction: column; */
+  }
+
+  header .meniu {
+    display: flex;
+  } 
+
+  header nav div {
+    margin: 12px 0px;
+  }
+}
